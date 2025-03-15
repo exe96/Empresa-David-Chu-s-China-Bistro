@@ -1,0 +1,30 @@
+@use "./colors" as c;
+
+html{
+    font-size: 17px;
+}
+html, body {
+    height: 100%;
+    margin: 0; /* Eliminar márgenes por defecto */
+}
+.body {
+    display: grid;
+    background-color: #61122f;
+    min-height: 100vh; /* Ocupar toda la altura de la pantalla */
+    grid-template-rows: minmax(50px, auto) 1fr minmax(50px, auto);
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.body-content{
+    background-color: #61122f;
+    
+}
+
+

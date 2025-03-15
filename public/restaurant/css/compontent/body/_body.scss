@@ -1,0 +1,96 @@
+
+.jumbotron{
+    background-image: url('../../images/restaurant/jumbotron_992.jpg');
+    background-repeat: no-repeat;
+    height: 558px;
+    background-size: cover;
+    box-shadow: 0 0 50px #3F0C1F;
+    border: 2px solid #3F0C1F;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    
+}
+@media (min-width: 1200px) {
+    .jumbotron {
+        background: url('../../images/restaurant/jumbotron_1200.jpg');
+        height: 675px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+@media (max-width: 991px) {
+    /* Home Page */ .jumbotron {
+        background: url('../../images/restaurant/jumbotron_768.jpg');
+        height: 432px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
+.menu-tile{
+    background-image: url('../../images/restaurant/menu-tile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+}
+.specials-tile{
+    background-image: url('../../images/restaurant/specials-tile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+}
+.map{
+    height: 250px;
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+    
+}
+.a-tile{
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    color: #fff;
+    .specials-tile{
+        display: flex;
+        align-items: end;
+        span{
+            background-color: #000;
+            opacity: .8;
+            flex-grow: 1;
+        }
+    }
+    .map {
+        display: flex;
+        align-items: end;
+        span{
+            flex-grow: 1;
+            background-color: #000;
+            opacity: .8;
+        }
+    }
+    .menu-tile{
+        display: flex;
+        align-items: end;
+        span{
+            flex-grow: 1;
+            background-color: #000;
+            opacity: .8;
+        }
+    }
+}
+

@@ -1,0 +1,82 @@
+@use "../config_default/colors" as c;
+
+
+.panel-footer{
+    background-color: c.$background-footer;
+    margin-top: 30px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    color: #fff;
+    border-top: 0;
+}
+/* .panle-footer-content{
+    
+} */
+/* .panle-footer-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+} */
+#hours{
+/*     justify-self: center;
+    display: flex;
+    justify-content: center; */
+   
+    
+    p{
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+
+        .hours-title{
+            font-size: 1.3em;
+        }
+    }
+}
+#address{
+  /*   justify-self: center;
+    display: flex;
+     */
+  
+   
+    
+    .p-address{
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+
+        .hours-title{
+            font-size: 1.3em;
+        }
+
+    }
+    .p-Delivery{
+        color:c.$address ;
+    }
+ }
+
+ .col-padding{
+    padding: 0 15px;
+ }
+ #testimonials{
+    p:first-child{
+        margin: 0 0 10px;
+    }
+    p:nth-child(2){
+        margin-top: 25px;
+    }
+    
+ }
+ .access{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    a{
+        margin-left: 5px;
+    }
+ }
+
+ @media(max-width: 767px){
+    .panle-footer-content{
+        text-align: center;
+    }
+ }

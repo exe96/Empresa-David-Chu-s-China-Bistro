@@ -1,0 +1,349 @@
+@media (max-width:767px){
+
+    .form-add-item{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .photo-add{
+        margin-bottom: 20px;
+    }
+    .form-add-item-input{
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0px;
+    }
+    .form-add-item-input{
+        input{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+   
+}
+
+.item-menu{
+    display: inline-block;
+    
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    border: 2px solid #000;
+    overflow: hidden;
+    &:hover{
+        box-shadow: 0 0 10px 5px white;
+    }
+}
+.menu-explain{
+    margin-bottom: 2.4rem;
+}
+.item-menu-content{
+    display: flex;
+    justify-content: center;
+
+}
+.category-tile{
+    position: relative;
+}
+.item-name{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    text-align: center;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 15px;
+   /*  background-color: #007bff; */
+   background-color: #f6b319;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    &:hover{
+       /*  background-color: #0056b3; */
+       background-color: #d99a12;
+
+    }
+}
+.photo-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: solid 1px #f6b319;
+}
+
+.category-tilde-btns{
+    position: absolute;
+    top:10px;
+    right:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10000;
+
+    .category-tilde-btn-edit{
+        border:none;
+        padding: 5px 8px;
+        background-color:#557c3e; 
+        color:white;
+    }
+    .category-tilde-btn-delete{
+        border:none;
+        padding: 5px 8px;
+        background-color:#557c3e; 
+        color:white;
+    }
+}
+.category-tilde{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.modal-category-no-selected{
+    display: none;
+}
+.normal-body{
+    overflow: auto;
+    padding: 0;
+}
+.modal-body{
+    overflow: hidden;
+    padding-right: 15px;
+}
+
+/* .model-overflow-hidden{
+    overflow: hidden;
+} */
+
+.modal-category-selected{
+ position: fixed;
+ top: 0;
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 20000;
+ backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+ .modal-category-selected-content {
+    width: 90%; /* Por defecto, ocupa el 90% del ancho de la pantalla */
+    max-width: 600px; /* No más de 600px para evitar que sea demasiado grande */
+    height: auto; /* Altura automática según el contenido */
+    max-height: 90vh; /* Máximo 90% del alto de la pantalla */
+    background: #557c3e;;
+   /*  border: solid 1px white ; */
+    padding: 20px;
+    border-radius: 8px;
+   
+    overflow-y: auto; /* Agrega scroll si el contenido es muy largo */
+  
+   
+    
+}
+
+/* Para pantallas grandes (PC) */
+@media (min-width: 1024px) {
+    .modal-category-selected-content {
+        width: 50%;
+        max-width: 700px;
+        height: 80vh;
+        max-height: 1100px;
+    }
+}
+
+/* Para tablets */
+@media (max-width: 1023px) {
+    .modal-category-selected-content {
+        width: 80%;
+        max-width: 500px;
+        height: 80vh;
+        
+    }
+}
+
+/* Para móviles */
+@media (max-width: 767px) {
+    .modal-category-selected-content {
+        width: 95%;
+        max-width: 400px;
+        height: 85vh;
+        padding: 15px;
+    }
+}
+
+
+}
+.category-tile-modal{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: solid 1px #000;
+    margin-bottom: 20px;
+   /*  .item-name{
+
+    } */
+}
+.selected-content{
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+.modal-section-form{
+flex-grow: 1;
+padding: 0 10px;
+}
+.modal-form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px 0;
+    input[type="text"]{
+        display: block;
+        width: 100%;
+        padding: 5px 15px;
+    }
+    label{
+        text-align: center;
+        width: 150px;
+        padding: 5px 15px;
+        border-radius: 1px;
+        border: none;
+        color: #fff;
+        background-color: #f6b319;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+.model-name{
+    color: #fff;
+    padding: 5px 15px;
+}
+.model-h2{
+    color: white;
+    margin-bottom: 30px;
+}
+.model-btn-update{
+    width: 150px;
+    padding: 5px 15px;
+    color: #fff;
+    background-color: #222;
+    border: none;
+    border-radius: 1px;
+}
+.modal-input-submit{
+    display: flex;
+    justify-content: end;
+}
+.modal-exit{
+    display: flex;
+    justify-content: end;
+    
+    .modal-btn-exit{
+        background-color: transparent;
+        border: none;
+        color: #000;
+        opacity: 0.8;
+    }
+}
+
+.form-add-item{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+
+    .form-add-item-input{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 10px;
+        justify-content: flex-end;
+        flex-grow: 1;
+        max-width: 400px;
+        color: #fff;
+        input{
+           width: 100%;
+           max-width: 400px;
+           padding-left: 10px;
+          
+        }
+        
+}
+
+}
+.form-add-item-foot-content{
+    
+        display: flex;
+        justify-content: center;
+
+    
+    .form-add-item-foot{
+        display: flex;
+        width: 600px;
+        justify-content: space-between;
+     margin-bottom: 20px;
+        input[type="submit"]{
+            display: inline-block;
+            width: 200px;
+            background-color: #557c3e;
+            color:#fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            &:hover{
+                background-color: #496833;
+            }
+         }
+    
+    }
+}
+@media (max-width:767px){
+
+    .form-add-item{
+        flex-direction: column;
+        align-items: center;
+        .form-add-item-input{
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0px;
+            input{
+                max-width: 100%;
+            }
+        }
+        
+    }
+    .photo-add{
+        margin-bottom: 20px;
+    }
+    .form-add-item-foot-content{
+        .form-add-item-foot{
+            width: 100%;
+        }
+    }
+   
+
+   
+}
+
+@media(max-width:460px){
+
+    .form-add-item-foot-content{
+        .form-add-item-foot{
+            flex-direction: column;
+            gap: 10px;
+            input[type=submit]{
+                width: 100%;
+            }
+        }
+    }
+}

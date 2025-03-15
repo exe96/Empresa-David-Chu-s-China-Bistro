@@ -1,0 +1,347 @@
+@charset "UTF-8";
+.menu-item-photo {
+  overflow: hidden;
+  position: relative;
+  border: solid 1px #000;
+  /*   &:hover{
+        box-shadow: 0 0 10px 5px white;
+    } */
+}
+.menu-item-photo .description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #557c3e;
+  width: 80px;
+  text-align: center;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.menu-item-tile {
+  color: #fff;
+}
+
+.menu-item-price {
+  text-align: right;
+}
+
+.visible-xs {
+  display: none;
+}
+
+.menu-explain {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #eee;
+  }
+  #flex-row {
+    display: flex;
+    justify-content: center;
+  }
+  .menu-item-title {
+    text-align: center;
+  }
+  .menu-item-details {
+    text-align: center;
+  }
+}
+.menu-item-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+}
+
+/*seccion de editar items*/
+.items-tilde-btns {
+  position: absolute;
+  overflow: hidden;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10000;
+}
+.items-tilde-btns .items-tilde-btn-edit {
+  border: none;
+  padding: 5px 8px;
+  background-color: #557c3e;
+  color: white;
+}
+.items-tilde-btns .items-tilde-btn-delete {
+  border: none;
+  padding: 5px 8px;
+  background-color: #557c3e;
+  color: white;
+}
+
+.modal-category-no-selected {
+  display: none;
+}
+
+/*ver si todo es del modal*/
+.modal-category-selected {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  /* Para pantallas grandes (PC) */
+  /* Para tablets */
+  /* Para móviles */
+}
+.modal-category-selected .modal-category-selected-content {
+  width: 90%; /* Por defecto, ocupa el 90% del ancho de la pantalla */
+  max-width: 600px; /* No más de 600px para evitar que sea demasiado grande */
+  height: auto; /* Altura automática según el contenido */
+  max-height: 90vh; /* Máximo 90% del alto de la pantalla */
+  background: #557c3e;
+  /*  border: solid 1px white ; */
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto; /* Agrega scroll si el contenido es muy largo */
+}
+@media (min-width: 1024px) {
+  .modal-category-selected .modal-category-selected-content {
+    width: 50%;
+    max-width: 700px;
+    height: 85vh;
+    max-height: 1100px;
+  }
+}
+@media (max-width: 1023px) {
+  .modal-category-selected .modal-category-selected-content {
+    width: 80%;
+    max-width: 500px;
+    height: 78vh;
+  }
+}
+@media (max-width: 767px) {
+  .modal-category-selected .modal-category-selected-content {
+    width: 95%;
+    max-width: 400px;
+    height: 100vh;
+    padding: 15px;
+    padding-bottom: 60px;
+  }
+}
+
+.category-tile-modal {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: solid 1px #000;
+  /*  .item-name{
+
+   } */
+}
+
+.selected-content {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.modal-section-form {
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+.modal-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px 0;
+}
+.modal-form input[type=text] {
+  display: block;
+  width: 100%;
+  padding: 5px 15px;
+}
+.modal-form label {
+  text-align: center;
+  width: 150px;
+  padding: 5px 15px;
+  border-radius: 1px;
+  border: none;
+  color: #fff;
+  background-color: #f6b319;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.model-name {
+  color: #fff;
+  padding: 5px 15px;
+}
+
+.model-h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.model-btn-update {
+  width: 150px;
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #222;
+  border: none;
+  border-radius: 1px;
+}
+
+.modal-input-submit {
+  display: flex;
+  justify-content: end;
+}
+
+.modal-exit {
+  display: flex;
+  justify-content: end;
+}
+.modal-exit .modal-btn-exit {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  opacity: 0.8;
+}
+
+.normal-body {
+  overflow: auto;
+  padding: 0;
+}
+
+.modal-body {
+  overflow: hidden;
+  padding-right: 15px;
+}
+
+.form-add-item {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.form-add-item .form-add-item-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+  justify-content: flex-end;
+  flex-grow: 1;
+  max-width: 400px;
+  color: #fff;
+}
+.form-add-item .form-add-item-input input {
+  width: 100%;
+  max-width: 400px;
+  padding-left: 10px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 15px;
+  /*  background-color: #007bff; */
+  background-color: #f6b319;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.custom-file-upload:hover {
+  /*  background-color: #0056b3; */
+  background-color: #d99a12;
+}
+
+.photo-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: solid 1px #f6b319;
+}
+
+.form-add-item-foot-content {
+  display: flex;
+  justify-content: center;
+}
+.form-add-item-foot-content .form-add-item-foot {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.form-add-item-foot-content .form-add-item-foot input[type=submit] {
+  display: inline-block;
+  width: 200px;
+  background-color: #557c3e;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.form-add-item-foot-content .form-add-item-foot input[type=submit]:hover {
+  background-color: #496833;
+}
+
+@media (max-width: 767px) {
+  .form-add-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-add-item .form-add-item-input {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0px;
+  }
+  .form-add-item .form-add-item-input input {
+    max-width: 100%;
+  }
+  .photo-add {
+    margin-bottom: 20px;
+  }
+  .form-add-item-foot-content .form-add-item-foot {
+    width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  .form-add-item-foot-content .form-add-item-foot {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-add-item-foot-content .form-add-item-foot input[type=submit] {
+    width: 100%;
+  }
+}
+@media (max-width: 1212px) {
+  .menu-item-photo {
+    height: 150px;
+  }
+}
+@media (max-width: 575px) {
+  .col-1-575 {
+    width: 60%;
+  }
+}
+/* 575 */
+
+/*# sourceMappingURL=menuItems.css.map */

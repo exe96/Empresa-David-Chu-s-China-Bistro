@@ -1,0 +1,306 @@
+@use "../config_default/colors" as c;
+
+
+header{
+    position: relative;
+    background: c.$background-header;
+    margin-bottom: 20px;
+}
+
+.container-burger-menu{
+    display: none;
+
+}
+.container-burger-menu-active{
+    display: block;
+
+}
+
+.content-all-header{
+    position: relative;
+}
+.contact-sm{
+    display: none;
+  }
+.burger-hr{
+    display: none;
+   
+}
+.hr-color{
+    color:#fff;
+}
+.burger-hr-active{
+    display: block ;
+    
+}
+  .menu-burger{
+    font-size: 1.2em;
+    list-style: none;
+    padding-left:0;
+    li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+        text-align: center;
+        &:hover{
+            background-color: #fff;
+        }
+        a{ 
+            
+            text-align: center;
+            text-decoration: none;
+            color: c.$color-btns-nav-ul;
+        }
+    }
+  }
+
+#logo{
+    background-image: url("../../images/restaurant/restaurant-logo_large.png");
+    width: 150px;
+    height: 150px;
+    margin: 10px 15px 10px 0;
+}
+.buttons-burger{
+    display: none;
+    &:hover{
+        background-color: #fff;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Header */
+    #logo{
+      background: url('../../images/restaurant/restaurant-logo_medium.png');
+      background-size: cover;
+      width: 100px;
+      height: 100px;
+      margin: 5px 5px 5px 0;
+    }
+
+}
+.navbar-header{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+.nav-list{
+    justify-self: end;
+    
+}
+.navbar-main-brand{
+    display: flex;
+    
+
+}
+    .navbar-brand{
+        
+        a{text-decoration: none;}
+        h1{
+        font-family: 'Lora', serif;
+        color: #557c3e;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #222;
+        margin-top: 30px;
+        margin-bottom: 0;
+        line-height: .75;
+        
+        }
+
+        p{
+            color: #000;
+            text-transform: uppercase;
+            font-size: .7em;
+            margin-top: 15px;
+        }
+}
+
+.nav-list{
+
+    .navbar-right{
+        margin-top: 20px;
+        flex-direction: row;
+        
+        a{
+            text-decoration: none;
+            color: c.$color-btns-nav-ul;
+        }
+        div{
+            text-align: end;
+            color:#557c3e;
+           
+        }
+    }
+
+}
+@media (max-width: 1199px){
+    .nav-list{
+        font-size: 16px;
+        align-self: center;
+        .navbar-right{
+            margin-top: 0;
+            flex-wrap: nowrap;
+            li{
+                a{
+                    span{
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    
+
+    }
+    .element-i {
+        padding: 10px;
+    }
+}
+@media(max-width: 991px){
+    #logo{
+        display: none;
+    }
+    .navbar-header{
+        display: block;
+    }
+    .navbar-main-brand{
+        float: left;
+    }
+    .nav-list{
+        float: right;
+        .navbar-right{
+            margin-top: -45px;
+        }
+    }
+
+    
+}
+
+@media(max-width:767px){
+    .navbar-brand{
+        a{
+            h1{
+                font-size: 1.36em;
+            }
+        }
+    }
+    .buttons-burger{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 9px 10px;
+        margin-top: 8px;
+        margin-right: 15px;
+        margin-bottom: 8px;
+        background-color: transparent;
+        border: 1px solid c.$background-body;
+        border-radius: 4px;
+    }
+    
+    .line{margin-top: 4px;
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: c.$background-body;
+    }
+    
+    
+    .contact-sm{
+        display: block;
+    }
+    .nav-list{
+        display: none;
+    }
+    
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+         url('../fonts/glyphicons-halflings-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .glyphicon {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Glyphicons Halflings';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  
+  .glyphicon-home:before { content: "\e021"; }
+  .glyphicon-cutlery:before { content: "\e179"; }
+  .glyphicon-info-sign:before { content: "\e086"; }
+  .glyphicon-certificate:before { content: "\e124"; }
+  .glyphicon-earphone:before { content: "\e182"; }
+  /*tener en cuenta que el content puede que no se asigne correctamente aveces*/
+ /*  .phone-icon::before{
+    font-family: 'Glyphicons Halflings';content:"\e182";
+  } */
+
+
+  .element-i{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    line-height: 20px;
+    &:hover{
+        background: #fff ;
+    }
+  }
+  .navbar-right{
+    
+    li{
+
+        .phone{
+            display: flex;
+            justify-content: center;
+        }
+
+        a{
+            span{
+                font-size: 1.8em;
+                padding: 10px 15px;
+                
+                &:hover{
+                    background: #fff ;
+                  
+                }
+            }
+        }
+    }
+    
+}
+
+.contact-sm-content{
+    
+    p{
+            margin: 0 20px;
+            padding: 10px;
+            border: 2px solid #fff;
+            background-color: #f6b319;
+            border-radius: 6px;
+        a{ 
+            display: block;
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #951c49;
+            text-align: center;
+            
+    }
+    }  
+}
+.contact-sm-deliver{
+    font-size: .7em;
+    margin-top: 5px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}

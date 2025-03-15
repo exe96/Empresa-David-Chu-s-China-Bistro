@@ -1,0 +1,471 @@
+@charset "UTF-8";
+html {
+  font-size: 17px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0; /* Eliminar márgenes por defecto */
+}
+
+.body {
+  display: grid;
+  background-color: #61122f;
+  min-height: 100vh; /* Ocupar toda la altura de la pantalla */
+  grid-template-rows: minmax(50px, auto) 1fr minmax(50px, auto);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body-content {
+  background-color: #61122f;
+}
+
+header {
+  position: relative;
+  background: #f6b319;
+  margin-bottom: 20px;
+}
+
+.container-burger-menu {
+  display: none;
+}
+
+.container-burger-menu-active {
+  display: block;
+}
+
+.content-all-header {
+  position: relative;
+}
+
+.contact-sm {
+  display: none;
+}
+
+.burger-hr {
+  display: none;
+}
+
+.hr-color {
+  color: #fff;
+}
+
+.burger-hr-active {
+  display: block;
+}
+
+.menu-burger {
+  font-size: 1.2em;
+  list-style: none;
+  padding-left: 0;
+}
+.menu-burger li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  text-align: center;
+}
+.menu-burger li:hover {
+  background-color: #fff;
+}
+.menu-burger li a {
+  text-align: center;
+  text-decoration: none;
+  color: #951C49;
+}
+
+#logo {
+  background-image: url("../../images/restaurant/restaurant-logo_large.png");
+  width: 150px;
+  height: 150px;
+  margin: 10px 15px 10px 0;
+}
+
+.buttons-burger {
+  display: none;
+}
+.buttons-burger:hover {
+  background-color: #fff;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+  #logo {
+    background: url("../../images/restaurant/restaurant-logo_medium.png");
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 5px 5px 5px 0;
+  }
+}
+.navbar-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nav-list {
+  justify-self: end;
+}
+
+.navbar-main-brand {
+  display: flex;
+}
+
+.navbar-brand a {
+  text-decoration: none;
+}
+.navbar-brand h1 {
+  font-family: "Lora", serif;
+  color: #557c3e;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 30px;
+  margin-bottom: 0;
+  line-height: 0.75;
+}
+.navbar-brand p {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  margin-top: 15px;
+}
+
+.nav-list .navbar-right {
+  margin-top: 20px;
+  flex-direction: row;
+}
+.nav-list .navbar-right a {
+  text-decoration: none;
+  color: #951C49;
+}
+.nav-list .navbar-right div {
+  text-align: end;
+  color: #557c3e;
+}
+
+@media (max-width: 1199px) {
+  .nav-list {
+    font-size: 16px;
+    align-self: center;
+  }
+  .nav-list .navbar-right {
+    margin-top: 0;
+    flex-wrap: nowrap;
+  }
+  .nav-list .navbar-right li a span {
+    padding: 10px;
+  }
+  .element-i {
+    padding: 10px;
+  }
+}
+@media (max-width: 991px) {
+  #logo {
+    display: none;
+  }
+  .navbar-header {
+    display: block;
+  }
+  .navbar-main-brand {
+    float: left;
+  }
+  .nav-list {
+    float: right;
+  }
+  .nav-list .navbar-right {
+    margin-top: -45px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-brand a h1 {
+    font-size: 1.36em;
+  }
+  .buttons-burger {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    border: 1px solid #61122f;
+    border-radius: 4px;
+  }
+  .line {
+    margin-top: 4px;
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #61122f;
+  }
+  .contact-sm {
+    display: block;
+  }
+  .nav-list {
+    display: none;
+  }
+}
+@font-face {
+  font-family: "Glyphicons Halflings";
+  src: url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.glyphicon {
+  display: inline-block;
+  font: normal normal normal 14px/1 "Glyphicons Halflings";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-home:before {
+  content: "\e021";
+}
+
+.glyphicon-cutlery:before {
+  content: "\e179";
+}
+
+.glyphicon-info-sign:before {
+  content: "\e086";
+}
+
+.glyphicon-certificate:before {
+  content: "\e124";
+}
+
+.glyphicon-earphone:before {
+  content: "\e182";
+}
+
+/*tener en cuenta que el content puede que no se asigne correctamente aveces*/
+/*  .phone-icon::before{
+   font-family: 'Glyphicons Halflings';content:"\e182";
+ } */
+.element-i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+  line-height: 20px;
+}
+.element-i:hover {
+  background: #fff;
+}
+
+.navbar-right li .phone {
+  display: flex;
+  justify-content: center;
+}
+.navbar-right li a span {
+  font-size: 1.8em;
+  padding: 10px 15px;
+}
+.navbar-right li a span:hover {
+  background: #fff;
+}
+
+.contact-sm-content p {
+  margin: 0 20px;
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: #f6b319;
+  border-radius: 6px;
+}
+.contact-sm-content p a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #951c49;
+  text-align: center;
+}
+
+.contact-sm-deliver {
+  font-size: 0.7em;
+  margin-top: 5px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.panel-footer {
+  background-color: #222;
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  color: #fff;
+  border-top: 0;
+}
+
+/* .panle-footer-content{
+
+} */
+/* .panle-footer-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+} */
+#hours {
+  /*     justify-self: center;
+      display: flex;
+      justify-content: center; */
+}
+#hours p {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+#hours p .hours-title {
+  font-size: 1.3em;
+}
+
+#address {
+  /*   justify-self: center;
+    display: flex;
+     */
+}
+#address .p-address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+#address .p-address .hours-title {
+  font-size: 1.3em;
+}
+#address .p-Delivery {
+  color: #557c3e;
+}
+
+.col-padding {
+  padding: 0 15px;
+}
+
+#testimonials p:first-child {
+  margin: 0 0 10px;
+}
+#testimonials p:nth-child(2) {
+  margin-top: 25px;
+}
+
+.access {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.access a {
+  margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+  .panle-footer-content {
+    text-align: center;
+  }
+}
+.jumbotron {
+  background-image: url("../../images/restaurant/jumbotron_992.jpg");
+  background-repeat: no-repeat;
+  height: 558px;
+  background-size: cover;
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 1200px) {
+  .jumbotron {
+    background: url("../../images/restaurant/jumbotron_1200.jpg");
+    height: 675px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 991px) {
+  /* Home Page */
+  .jumbotron {
+    background: url("../../images/restaurant/jumbotron_768.jpg");
+    height: 432px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.menu-tile {
+  background-image: url("../../images/restaurant/menu-tile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+}
+
+.specials-tile {
+  background-image: url("../../images/restaurant/specials-tile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+}
+
+.map {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+}
+
+.a-tile {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.a-tile .specials-tile {
+  display: flex;
+  align-items: end;
+}
+.a-tile .specials-tile span {
+  background-color: #000;
+  opacity: 0.8;
+  flex-grow: 1;
+}
+.a-tile .map {
+  display: flex;
+  align-items: end;
+}
+.a-tile .map span {
+  flex-grow: 1;
+  background-color: #000;
+  opacity: 0.8;
+}
+.a-tile .menu-tile {
+  display: flex;
+  align-items: end;
+}
+.a-tile .menu-tile span {
+  flex-grow: 1;
+  background-color: #000;
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=china-bistro-home.css.map */
