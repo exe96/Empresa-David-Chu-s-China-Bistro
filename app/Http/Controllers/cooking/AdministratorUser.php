@@ -36,7 +36,7 @@ class AdministratorUser extends Controller{
      $request->session()->invalidate();
      $request->session()->regenerateToken();
 
-     return view('cooking.home');
+     return view('home.home');
  }
 
  // Método para registrar un usuario

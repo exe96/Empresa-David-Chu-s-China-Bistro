@@ -1,10 +1,10 @@
-<?php 
-namespace App\Models\Cook;  
+<?php
+namespace App\Models\Cook;
 use Illuminate\Support\Facades\DB;
 //Query Builder
 
 class Getitem{
-    public static function getFoodDetails($food)
+    public function getFoodDetails($food)
     {
         return [
             'titles' => DB::table('menu_category_item as m')

@@ -13,13 +13,14 @@ use Exception;
 use Laravel\Pail\ValueObjects\Origin\Console;
 
 class ClassController extends Controller{
+
+
     function getMenu(){
       $menu=Menu::getMenu();
-      return view('cooking.views.menu',['menu'=>$menu['menuItems']]);
+      return view('menu.menu',['menu'=>$menu['menuItems']]);
     }
     function getFood($food){
-      session_start();  
-      $validFoods = ['A', 'B', 'C', 'CM', 'CU', 'D', 'DK', 'DS', 'F', 'FR', 'FY', 'L', 'NF', 'NL', 'PF', 'SO', 'SP', 'SR', 'V', 'VG'];
+      session_start();
       if(!isset($_SESSION['collection'])){
         $menu=Menu::getMenu();
         $menuCollection=[];
@@ -32,12 +33,12 @@ class ClassController extends Controller{
           //cambiar vista
         return response('No se encontró esa comida específica, vuelve a intentar');
     }
-      
+
       $foodDetails = Getitem::getFoodDetails($food);
 
       unset($_SESSION['collection']);
       /* return response()->json($foodDetails); */
-        return view('cooking.views.menuItemComplete', ['foodDetails'=>$foodDetails,'food'=>$food]);
+        return view('items.menuItemComplete', ['foodDetails'=>$foodDetails,'food'=>$food]);
     }
 
     static public function modifyCategory(Request $request){
@@ -60,7 +61,7 @@ class ClassController extends Controller{
 /* return $request->input('modal-id'); */
   $id=$request->input('modal-id');
   $category = MenuCategoryItem::findOrFail($id);
-   
+
 // Verificamos si el archivo es nulo y si el nombre está vacío
 if ($file === null && trim($name) !== '') {
     // Solo se modifica el nombre en la base de datos
@@ -121,8 +122,8 @@ if ($file === null && trim($name) !== '') {
     }
 
 
-  
- // ✅ Crear nueva categoría
+
+ //  Crear nueva categoría
   static public function createCategory(Request $request) {
   $request->validate([
       'name' => 'required|string|unique:menu_category_item,name',
@@ -168,7 +169,7 @@ if ($file === null && trim($name) !== '') {
   return back()->with('success', 'Categoría creada correctamente!');
 }
 
-// ✅ Eliminar categoría
+//  Eliminar categoría
 static public function deleteCategory(Request $request) {
   try{
   $letter=$request->input('letter');
@@ -183,7 +184,7 @@ static public function deleteCategory(Request $request) {
 }
 }
 
-// ✅ Crear un ítem
+// Crear un ítem
 static public function createItem(Request $request) {
   $request->validate([
       'extension' => 'required|integer|exists:soported_extension,id',
@@ -196,7 +197,7 @@ static public function createItem(Request $request) {
   ]);
 
 
-  
+
 
   Item::create([
       'extension' => $request->input('extension'),
@@ -218,13 +219,13 @@ if ($request->hasFile('img')) {
     $path = public_path('images/restaurant/menu/'.$letter.'/'. $filename);
       if (file_exists($path)) {
         unlink($path); // Borra la imagen anterior antes de subir la nueva
-    
+
     }
     $request->file('img')->move(public_path('images/restaurant/menu/'.$letter.'/'), $filename);
    }catch(Exception $e){
     return back()->withErrors('Ocurrió un problema al acregar la foto del item el ítem: ' . $e->getMessage())->withInput();
    }
-  
+
   // ...
 }
 
@@ -232,7 +233,7 @@ if ($request->hasFile('img')) {
   return back()->with('success', 'Ítem creado correctamente!');
 }
 
-// ✅ Actualizar un ítem
+//  Actualizar un ítem
 static public function updateItem(Request $request) {
   $request->validate([
       'extension' => 'nullable|integer|exists:soported_extension,id',
@@ -255,19 +256,19 @@ static public function updateItem(Request $request) {
     $path = public_path('images/restaurant/menu/'.$letter.'/'. $filename);
       if (file_exists($path)) {
         unlink($path); // Borra la imagen anterior antes de subir la nueva
-    
+
     }
     $request->file('img')->move(public_path('images/restaurant/menu/'.$letter.'/'), $filename);
 
   }
-  
+
   $item = Item::findOrFail($request->input('id'));
   $item->update($request->only(['extension', 'price', 'title', 'description', 'letter', 'number']));
 
   return back()->with('success', 'Ítem actualizado correctamente!');
 }
 
-// ✅ Eliminar un ítem
+//  Eliminar un ítem
 static public function deleteItem(Request $request) {
   $id=$request->input('id');
   $item = Item::findOrFail($id);
