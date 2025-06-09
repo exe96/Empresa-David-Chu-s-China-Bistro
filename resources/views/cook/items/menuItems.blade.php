@@ -1,7 +1,7 @@
 
 <h2 id="menu-categories-title" class="text-center text-light">{{$title}}</h2>
 <div class="text-center text-light menu-explain">
-    {{$foodDetails['titles'][0]->description}}
+    {{$foodDetails['title'][0]->description}}
 </div>
 {{-- error and success--}}
 @auth

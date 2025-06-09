@@ -1,4 +1,4 @@
-@extends('template.app.app')
+@extends('cook.template.app.app')
 @section('content')
 @section('styles')
 <link rel="stylesheet" href="{{asset('restaurant/css/about.css')}}">

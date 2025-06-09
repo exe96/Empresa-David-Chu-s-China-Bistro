@@ -1,7 +1,7 @@
 function detectExtencionZoneDrop( photo, modal_extHidden){
 
      let modal_extension= photo.split('.').pop().toLowerCase();
-  
+
     switch(modal_extension){
         case 'jpg':
             modal_extHidden.value=2;
@@ -20,7 +20,7 @@ function detectExtencionZoneDrop( photo, modal_extHidden){
 }
 
 function detectExtencionChangeInput(file,hiddenInput){
-    console.log('intentando ejecutar chage input');
+
   if (file) {
     let ext = file.name.split('.').pop().toLowerCase(); // Obtener extensión en minúsculas
     switch (ext) {
@@ -57,7 +57,7 @@ modal_submit_update.addEventListener('click',(event)=>{
     const input_text=document.querySelector('.modal-name');
     const input_file=document.getElementById('modal-input-file');
 
-  
+
     if(confirm('¿Are you sure you want to submit the form?')) {
         modal_form.submit(); // Envía el formulario si el usuario confirma
     }
@@ -70,8 +70,8 @@ modal_name.addEventListener('blur',(event)=>{
     if(input.trim()!=='' && input.length>1 && input.length<19 ){
         item_name_selected.textContent=input;
     }
-   
-  
+
+
 
 });
 
@@ -84,15 +84,15 @@ modal_name.addEventListener('blur',(event)=>{
 
 btn_active_modal.forEach((element) => {
     element.addEventListener('click',(event)=>{
-       
+
        // Abrir el modal
        modal_date.classList.replace('modal-category-no-selected', 'modal-category-selected');
        body.classList.replace('normal-body', 'modal-body');
 
-       
-       
+
+
        // Obtener la imagen dentro del elemento
-       
+
         const get_img = element.parentElement.parentElement.children[1].firstElementChild.firstElementChild;
         const get_id=element.parentElement.parentElement.children[1].firstElementChild.lastElementChild;
         const get_ext=element.parentElement.parentElement.children[1].firstElementChild;
@@ -101,9 +101,9 @@ btn_active_modal.forEach((element) => {
        input_categorry.value=get_ext_complete;
         const get_category=get_id.getAttribute('data-category');
        modal_id.value= parseInt(get_id.getAttribute('data-id')) || 0;
-       
+
        modal_category.value=typeof get_category === "string"?get_category:'';
-       
+
        // Obtener atributos de la imagen original
        const imgSrc = get_img.getAttribute('src');
        const imgAlt = get_img.getAttribute('alt');
@@ -119,7 +119,7 @@ btn_active_modal.forEach((element) => {
         // Aplicar estilos para que la imagen no se salga del contenedor
         img.style.maxWidth = '100%';   // La imagen nunca será más ancha que el contenedor
         img.style.maxHeight = '100%';  // La imagen nunca será más alta que el contenedor
-         
+
         img.style.height='100%';
         img.style.width='100%';
        // Obtener el contenedor donde se añadirá la imagen
@@ -128,15 +128,15 @@ btn_active_modal.forEach((element) => {
        detectExtencionZoneDrop(img,input_modal_extencion); //terminar modal extencion */
         // Crear un fragmento para mejor rendimiento
        const fragment = document.createDocumentFragment();
-  
+
        // Vaciar el contenedor antes de agregar la nueva imagen (opcional)
        categoryTileModal.innerHTML = '';
        const modal_span_name=document.createElement('span');
        modal_span_name.setAttribute('class','item-name model-name');
        modal_span_name.textContent=imgAlt;
-       fragment.appendChild(modal_span_name); 
+       fragment.appendChild(modal_span_name);
 /* class="item-name model-name" */
-       
+
        fragment.appendChild(img);
 
        // Agregar la imagen al contenedor
@@ -176,9 +176,9 @@ fileInput.addEventListener('change', (event) => {
         return;
     }
 
-    console.log('Imagen válida:', file.name);
+
     const modal_img=document.querySelector('.modal-img');
-    
+
     // En lugar de FileReader, usamos un URL temporal
     const objectURL = URL.createObjectURL(file);
     modal_img.src = objectURL;
@@ -188,19 +188,19 @@ fileInput.addEventListener('change', (event) => {
 });
 function handleFile(files) {
     if (!isImage(files[0])) {
-        alert('Por favor, selecciona un archivo de imagen.');
+        alert('Please select an image file.');
         return;
     }
 
     fileInput.files = files;
     const modal_img=document.querySelector('.modal-img');
-    
+
     // En lugar de FileReader, usamos un URL temporal
     const objectURL = URL.createObjectURL(files[0]);
     modal_img.src = objectURL;
     modal_img.onload = () => URL.revokeObjectURL(objectURL);
 /*     const input_modal_extencion=document.querySelector('#extension-modal-category');
- */    
+ */
 }
 function insertImg(div_dad, files){
     div_dad.innerHTML='';
@@ -222,10 +222,10 @@ function insertImg(div_dad, files){
 }
 function handleFile2(files,input, div_dad){
     if (!isImage(files[0])) {
-        alert('Por favor, selecciona un archivo de imagen.');
+        alert('Please select an image file.');
         return;
     }
-   
+
 
     input.files = files;
     insertImg(div_dad ,files);
@@ -247,24 +247,23 @@ const files=event.dataTransfer.files;
 if(files.length>0){
 handleFile(files);
 const inpuExtension=document.getElementById('extension-modal-category');
-console.log('intentando andar en zone modal');
-console.log(files[0].name);
+
 detectExtencionZoneDrop( files[0].name, inpuExtension ); //ver
 
 }
 });
- 
+
 
 const   modal_content=document.querySelector('.modal-category-selected-content');
 modal_content.addEventListener('click',function (event){
     event.stopPropagation(); // Detiene la propagación del evento al div1
-   
+
 });
 
 
 const modal_desactiv=document.getElementById('modal-category');
 modal_desactiv.addEventListener('click',(event)=>{
-    console.log("desactivando modal");
+
     modal_date.classList.replace('modal-category-selected','modal-category-no-selected');
     body.classList.replace( 'modal-body','normal-body');
 
@@ -277,8 +276,8 @@ delete_categoryAll.forEach((category) => {
 
     category.addEventListener('click', (event) => {
             event.preventDefault();
-                
-        if (confirm('Confirmas que quieres eliminar el item')) {
+
+        if (confirm('Confirm that you want to remove the item')) {
             const form = event.target.closest('form'); // Busca el formulario más cercano al botón
             if (form) {
                 form.submit();
@@ -297,9 +296,9 @@ delete_categoryAll.forEach((category) => {
         if(confirm('Confirmas que quieres eliminar el item')){
             form_delete_category.submit();
         }
-    
+
     });
-    
+
 }
  */
 
@@ -326,7 +325,7 @@ function addCategory(zona_dropeable, input){
     input.addEventListener('change',(event)=>{
     const file = event.target.files[0];
     if (!isImage(file)) {
-        alert('Solo se permiten archivos de imagen PNG, JPG o JPEG.');
+        alert('Only PNG, JPG, or JPEG image files are allowed.');
         return;
     }
     console.log('Imagen válida:', file.name);
@@ -348,11 +347,12 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('/home/cooking/get-datalist-category') // Llamamos a la ruta en Laravel
         .then(response => response.json())
         .then(letrasOcupadas => {
+            console.log("Letras ocupadas:", letrasOcupadas.letters);
             const datalist = document.getElementById("letters-list");
             const todasLasLetras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""); // Todas las letras
 
             // Filtrar letras disponibles
-            const letrasDisponibles = todasLasLetras.filter(l => !letrasOcupadas.includes(l));
+            const letrasDisponibles = todasLasLetras.filter(l => !letrasOcupadas.letters.includes(l));
 
             // Agregar opciones al datalist
             letrasDisponibles.forEach(letra => {
@@ -367,9 +367,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             inputLetter.addEventListener("input", function () {
                 let letra = this.value.toUpperCase();
-                
-                if (letrasOcupadas.includes(letra)) {
-                    errorMessage.textContent = "⚠️ Esta letra ya está registrada. Prueba otra.";
+
+                if (letrasOcupadas.letters.includes(letra)) {
+                    errorMessage.textContent = "⚠️ This letter is already registered. Try another.";
                     this.style.borderColor = "red";
                 } else {
                     errorMessage.textContent = "";
@@ -377,9 +377,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         })
-        .catch(error => console.error("Error al obtener letras ocupadas:", error));
+        .catch(error => console.error("Error getting letters occupied::", error));
 
 
 
-        
+
 });

@@ -44,11 +44,11 @@ $_SESSION['collection'] =$menuCollection;
      <div class="photo-add text-white"> <span>No file selected</span></div>
      <input id="file-upload" type="file" hidden name="img" accept=".png, .jpg, .jpeg" >
     <div class="form-add-item-input">
-      <input type="text" max="30" name="title-category" required placeholder="Enter new title category">
+      <input type="text" max="30" name="title" required placeholder="Enter new title category">
       <input id="extension-category" type="number" name="extension" hidden value="4" >{{--important input--}}
       <input type="text" max="255"  name="description" required placeholder="Description category">
       <input type="text" name="name" required placeholder="name, is unique">
-      <input id="letter" type="text" name="letter" max="10" placeholder="you can combination letters max 10"  autocomplete="off" list="letters-list">
+      <input id="letter" type="text" name="letter" pattern="^[A-Za-z]{1,10}$" placeholder="you can combination only letters max 10"  autocomplete="off" list="letters-list">
       <datalist id="letters-list"></datalist>
       <small id="error-message" style="color: red;"></small>
     </div>
@@ -105,6 +105,8 @@ $_SESSION['collection'] =$menuCollection;
           <input type="number" name="modal-id" id="modal-id" hidden>
           <input id="extension-modal-category" type="number" name="extension" hidden >
           <input class="modal-category" type="text" name="modal-category" hidden>
+          <input type="text" name="modal-title" placeholder="Enter new title category" maxlength="50" minlength="2" required>
+          <input type="text" name="modal-description" placeholder="Description category" maxlength="255" minlength="2" >
           <label for="modal-input-file">Select file</label>
           <input id="modal-input-file" type="file" name="modal-file"  accept="image/png, image/jpeg, image/jpg" hidden required>
         </form>

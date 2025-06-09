@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('restaurant/css/china-bistro-home.css')}}">
+    <meta name="description" content="@yield('description', 'Welcome to David Chu\'s China Bistro by Exequiel Acosta Davila. This page has been recreated for my portfolio to demonstrate menu management functionality for David Chu\'s China Bistro.')">
+    <meta name="keywords" content="@yield('keywords', 'restaurant website, web development, Exequiel Acosta Davila, portfolio project, menu management, Chinese cuisine, user interface, responsive design, HTML, CSS, JavaScript, PHP, Laravel')">
+    <meta name="author" content="@yield('author', 'Exequiel Acosta Davila')">
+    <meta name="robots" content="index, follow">
+{{--     <meta name="google-site-verification" content="google-site-verification-code">
+ --}}    <link rel="stylesheet" href="{{asset('restaurant/css/china-bistro-home.css')}}">
     <link rel="stylesheet" href="{{asset('restaurant/css/bootstrap/bootstrap.css')}}">
     <link rel="icon" href="{{asset('images/restaurant/restaurant-logo-favicon.png')}}" type="image/png" sizes="16x16">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
@@ -47,7 +52,7 @@
                         </a>
                     </li>
                     <li>
-                         
+
                         <a class="phone" href="tel:410-602-5008">
                            <span> 410-602-5008</span>
                         </a>
@@ -57,17 +62,17 @@
             </div>
             </div>
             <div class="container-burger">
-                <button data-active="false" class="buttons-burger"> 
+                <button data-active="false" class="buttons-burger">
                     <span class="line"></span>
                     <span class="line"></span>
                     <span class="line"></span>
                 </button>
             </div>
             </div>
-           
+
         </nav>
         <hr class="burger-hr hr-color">
-        <div class="container-burger-menu"> 
+        <div class="container-burger-menu">
             <ul class="menu-burger">
                 <li><a href="{{route('cooking')}}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="{{route('cooking.menu')}} "><span class="glyphicon glyphicon-cutlery"></span> Menu</a></li>
@@ -76,12 +81,12 @@
             </ul>
         </div>
     </header>
-   
+
     <div class="contact-sm">
         <div class="contact-sm-content">
             <p><a href="tel:410-602-5008"><span class="glyphicon  glyphicon-earphone"></span> 410-602-5008</a></p>
         </div>
-       
+
         <p class="contact-sm-deliver">* We Deliver</p>
     </div>
     <div class="body-content">
@@ -96,11 +101,11 @@
             <span>Sun-Thurs: 11:15am - 10:00pm</span>
             <span>Fri: 11:15am - 2:30pm</span>
             <span>Saturday Closed</span>
-            
+
             </p>
             <hr class="d-sm-block d-md-none ">
-            
-           
+
+
         </section>
         <section id="address" class="col-sm-12 col-md-4 col-padding">
             <p class="p-address">
@@ -120,7 +125,7 @@
         <div class="access" class="text-center">
             © Copyright David Chu's China Bistro 2016 |
             @guest
-            <a href="{{Route('admin')}}"> Admin</a>   
+            <a href="{{Route('admin')}}"> Admin</a>
             @endguest
             @auth
             <a href="{{ route('cook.logout') }}">Log out</a>

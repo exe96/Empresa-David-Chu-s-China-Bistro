@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Cook;
-
+namespace App\Models\Cook\Menu\TitleCategory;
+use App\Models\Cook\Menu\ModelMenu;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TitleItem extends Model
+class ModelTitleCategory extends Model
 {
     use HasFactory;
 
@@ -22,15 +22,23 @@ class TitleItem extends Model
     // Deshabilitar timestamps si la tabla no tiene `created_at` y `updated_at`
     public $timestamps = false;
 
-    // Relación con MenuCategoryItem (asumiendo que el modelo se llama así)
-    public function menuCategoryItem()
+    // Relación con MenuCategoryItem
+    public function menuCategory()
     {
-        return $this->belongsTo(MenuCategoryItem::class, 'letter', 'letter');
+        return $this->belongsTo(ModelMenu::class, 'letter', 'letter');
     }
 
     // Sobrescribir la función `getKeyName` para evitar problemas con claves compuestas
     public function getKeyName()
     {
         return 'id'; // Laravel solo admite claves primarias simples, por lo que puedes manejar `id` como clave principal lógica
+    }
+    public function setTitle()
+    {
+        
+    }
+    public function setDescription()
+    {
+
     }
 }

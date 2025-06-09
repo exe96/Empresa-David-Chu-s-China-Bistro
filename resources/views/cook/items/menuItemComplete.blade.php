@@ -1,13 +1,16 @@
 @php
-$title=$foodDetails['titles'][0]->title;
+$title=$foodDetails['title'][0]->title;
+
 @endphp
-@extends('template.app.app')
+@extends('cook.template.app.app')
+@section('description', 'you can find the complete details of the food item here. Enjoy our delicious offerings and learn more about our menu items.')
+
 @section('title',$title )
 @section('styles')
     <link rel="stylesheet" href="{{ asset('restaurant/css/menuItems.css') }}">
 @endsection
 @section('content')
-@include('items.menuItems')
+@include('cook.items.menuItems')
 @endsection
 
 

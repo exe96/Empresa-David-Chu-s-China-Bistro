@@ -3,6 +3,8 @@
   overflow: hidden;
   position: relative;
   border: solid 1px #000;
+  max-width: 250px;
+  max-height: 173px;
   /*   &:hover{
         box-shadow: 0 0 10px 5px white;
     } */
