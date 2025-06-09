@@ -1,7 +1,7 @@
 # Recomendación de prueba del proyecto:
 
 ## Que hace el proyecto
-    Es un Catálogo (Menú)  el cual se pueden agregar, eliminar y actualizar, categorías e ítems. Tienes un usuario de prueba el que te permite realizar estas acciones. Solo necesitas ir a admin en la parte inferior de la página y hacer el login
+Es un Catálogo (Menú)  el cual se pueden agregar, eliminar y actualizar, categorías e ítems. Tienes un usuario de prueba el que te permite realizar estas acciones. Solo necesitas ir a admin en la parte inferior de la página y hacer el login
 
 ## Configuración basica
 - Edit .env
@@ -16,7 +16,7 @@
 # Project Test Recommendation:
 
 ## What the project does
-    It is a catalog (menu) where you can add, delete, and update categories and items. There is a test user that allows you to perform these actions. You just need to go to the admin section at the bottom of the page and log in.
+It is a catalog (menu) where you can add, delete, and update categories and items. There is a test user that allows you to perform these actions. You just need to go to the admin section at the bottom of the page and log in.
 
 ## Basic configuration
 - Edit the .env file.
