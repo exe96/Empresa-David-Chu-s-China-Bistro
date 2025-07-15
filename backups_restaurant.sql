@@ -92,121 +92,6 @@ LOCK TABLES `cache_locks` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `clase`
---
-
-DROP TABLE IF EXISTS `clase`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `clase` (
-  `id_persona` int(11) NOT NULL,
-  `id_clase` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(150) NOT NULL,
-  `fecha_creacion_clase` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `capacidad` int(11) NOT NULL,
-  `inicio_horario` time NOT NULL,
-  `fin_horario` time NOT NULL,
-  `fecha_dia` date DEFAULT '1000-01-01',
-  `descripcion` varchar(250) NOT NULL,
-  PRIMARY KEY (`id_clase`),
-  KEY `id_persona` (`id_persona`),
-  CONSTRAINT `clase_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `clase`
---
-
-LOCK TABLES `clase` WRITE;
-/*!40000 ALTER TABLE `clase` DISABLE KEYS */;
-INSERT INTO `clase` VALUES (9,2,'Reino Jurassico','2024-05-31 16:00:00',40,'00:00:00','00:00:00','2024-11-30','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(8,3,'Reino Animal','2024-05-31 20:00:00',40,'00:00:00','00:00:00',NULL,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(7,4,'Revolucion Francesa','2024-06-01 16:00:00',40,'00:00:00','00:00:00',NULL,'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,5,'Reino Jurassico','2024-10-21 16:59:01',40,'14:30:00','16:30:00','2024-10-21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,6,'Reino Jurassico','2024-10-21 16:59:40',40,'16:30:00','18:30:00','2024-10-21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,7,'Reino Jurassico','2024-10-21 17:00:09',40,'18:30:00','20:30:00','2024-10-21','Lorem ipsum dolor sit a'),(8,8,'Reino Animal','2024-10-21 17:00:50',40,'16:30:00','18:30:00','2024-10-21','Lorem ipsum dolor sit amet, consecte'),(8,9,'Reino Animal','2024-10-21 17:03:21',40,'16:30:00','18:30:00','2024-10-21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(8,10,'Reino Animal','2024-10-21 17:04:01',40,'14:30:00','16:30:00','2024-10-21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(8,11,'Reino Animal','2024-10-21 17:04:25',40,'12:30:00','14:30:00','2024-10-21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(8,12,'Reino Animal','2024-10-21 17:04:55',40,'10:30:00','11:30:00','2024-10-21','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,13,'Reino Jurassico','2024-10-21 19:28:31',40,'16:30:00','18:30:00','2024-10-31','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,14,'Reino Jurassico','2024-10-21 19:28:35',40,'14:30:00','16:30:00','2024-10-30','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,15,'Reino Jurassico','2024-10-21 19:28:56',40,'14:30:00','16:30:00','2024-10-26','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,16,'Reino Jurassico','2024-10-21 19:28:59',40,'16:30:00','18:30:00','2024-10-26','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,17,'Reino Jurassico','2024-10-28 17:35:58',40,'06:00:00','08:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,18,'Reino Jurassico','2024-10-28 17:36:42',10,'13:00:00','14:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,19,'Reino Jurassico','2024-10-28 17:37:16',40,'19:00:00','20:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,20,'Reino Jurassico','2024-10-28 17:37:43',40,'20:00:00','21:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,21,'Reino Jurassico','2024-10-28 17:38:01',40,'22:00:00','23:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,22,'Reino Jurassico','2024-10-28 17:38:29',40,'11:00:00','12:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.'),(9,23,'Reino Jurassico','2024-10-28 17:39:19',10,'16:00:00','17:00:00','2025-03-01','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia pellentesque tellus, ut tempor ex consequat nec. Duis sem urna, eleifend quis accumsan vitae, blandit ac sem. Donec sapien leo, hendrerit nec lectus eu, rutrum laoreet.');
-/*!40000 ALTER TABLE `clase` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cobranza`
---
-
-DROP TABLE IF EXISTS `cobranza`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cobranza` (
-  `id_pago` int(11) NOT NULL,
-  `comprobante` mediumblob,
-  `monto` float DEFAULT NULL,
-  KEY `id_pago` (`id_pago`),
-  CONSTRAINT `cobranza_ibfk_1` FOREIGN KEY (`id_pago`) REFERENCES `detalle_pago` (`id_pago`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cobranza`
---
-
-LOCK TABLES `cobranza` WRITE;
-/*!40000 ALTER TABLE `cobranza` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cobranza` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `detalle_pago`
---
-
-DROP TABLE IF EXISTS `detalle_pago`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `detalle_pago` (
-  `id_pago` int(11) NOT NULL AUTO_INCREMENT,
-  `id_persona` int(11) NOT NULL,
-  `estado` varchar(50) DEFAULT NULL,
-  `fecha` datetime NOT NULL,
-  `fecha_proxima` datetime DEFAULT NULL,
-  PRIMARY KEY (`id_pago`),
-  KEY `id_persona` (`id_persona`),
-  CONSTRAINT `detalle_pago_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `detalle_pago`
---
-
-LOCK TABLES `detalle_pago` WRITE;
-/*!40000 ALTER TABLE `detalle_pago` DISABLE KEYS */;
-/*!40000 ALTER TABLE `detalle_pago` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `direccion`
---
-
-DROP TABLE IF EXISTS `direccion`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `direccion` (
-  `id_direccion` int(11) NOT NULL AUTO_INCREMENT,
-  `id_clase` int(11) NOT NULL,
-  `calle_1` varchar(250) NOT NULL,
-  `calle_2` varchar(250) NOT NULL,
-  `name_establecimiento` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`id_direccion`),
-  UNIQUE KEY `id_clase` (`id_clase`),
-  UNIQUE KEY `name_establecimiento` (`name_establecimiento`),
-  CONSTRAINT `direccion_ibfk_1` FOREIGN KEY (`id_clase`) REFERENCES `clase` (`id_clase`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `direccion`
---
-
-LOCK TABLES `direccion` WRITE;
-/*!40000 ALTER TABLE `direccion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `direccion` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `failed_jobs`
 --
 
@@ -233,35 +118,6 @@ CREATE TABLE `failed_jobs` (
 LOCK TABLES `failed_jobs` WRITE;
 /*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `horario`
---
-
-DROP TABLE IF EXISTS `horario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `horario` (
-  `id_horario` int(11) NOT NULL AUTO_INCREMENT,
-  `id_clase` int(11) NOT NULL,
-  `inicio` datetime NOT NULL,
-  `fin` datetime NOT NULL,
-  `horario` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`id_horario`),
-  UNIQUE KEY `id_clase` (`id_clase`),
-  CONSTRAINT `horario_ibfk_1` FOREIGN KEY (`id_clase`) REFERENCES `clase` (`id_clase`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `horario`
---
-
-LOCK TABLES `horario` WRITE;
-/*!40000 ALTER TABLE `horario` DISABLE KEYS */;
-INSERT INTO `horario` VALUES (2,2,'2024-06-03 16:00:00','2024-06-03 18:00:00','vespertino'),(3,3,'2024-06-04 16:00:00','2024-06-04 18:00:00','vespertino');
-/*!40000 ALTER TABLE `horario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -519,7 +375,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('0lRLRJK3hRWuIaGsT3g8I0DQv7K5PHBOq9VJjB2i',NULL,'192.168.1.7','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiMjBMcW9QZlRjRG1UcmM5MDZyNG1wbjNhNDVtS0JnSXYxb2FwUGtieSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xOTIuMTY4LjEuNzo4MDgwL2hvbWUvY29va2luZy9tZW51L0IiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19',1741791894),('AKHWbqtHCvghSOMGvBneMndNPzVeoUri6Yls4x4O',23,'192.168.1.7','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoibFlIQTk2N1A3dlFhQXhnbkt2RHdORzhqUTFLeE9DNzRrQ3dvMlB5aSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTg6Imh0dHA6Ly8xOTIuMTY4LjEuNzo4MDgwL2hvbWUvY29va2luZy9nZXQtZGF0YWxpc3QtY2F0ZWdvcnkiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyMzt9',1741475417),('AUbRMQvFSj0GmIMWWjQjH5a64e9aP8HI0dkaWLkj',NULL,'192.168.1.7','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ3dSMURjcmtzdnBNN2N1YjJyWGtZV2QzSEh2QjA0Zlo0Q2tCSHpsYiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xOTIuMTY4LjEuNzo4MDgwL2hvbWUvY29va2luZy9hZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=',1741980022),('kho01H0uorSfhZ440BZuUPWcdWBvg6scbxvos67M',NULL,'192.168.1.7','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YToyOntzOjY6Il90b2tlbiI7czo0MDoiODg2dkJTUjZodTF6UTY4WmdaYnZKVWRhUEVkeHRkQUVrb25uejRKeiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==',1741979703),('P7Ni9wWuHXR2TJvSf7D95FbCay1AkGRpq0VUmbOf',NULL,'192.168.1.7','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiUG9icVJtRlZMc1h5eFRhVExaRjBjRUNoSFgzMVZLMjhHdHRlaXBIcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xOTIuMTY4LjEuNzo4MDgwL2hvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19',1741708133),('t12Y1a1ZTDNs0z5QyYiKpDf4WK1AqeIH9o7q0N6K',NULL,'192.168.1.7','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36','YTozOntzOjY6Il90b2tlbiI7czo0MDoiSkZYVTR0UG5qU1ZBWlhDY2NvSFAzQk9NdEpvT1JMUGh2SlkwMldEcyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xOTIuMTY4LjEuNzo4MDgwL2hvbWUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19',1741717353);
+INSERT INTO `sessions` VALUES ('tmCLwjHiAHCXMuA3aDZtfuiv2n7dTCbGlIjj1gBX',23,'127.0.0.1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36','YTo0OntzOjY6Il90b2tlbiI7czo0MDoienFDYmY3QzhvQ3d3NGMyN1RidG1La1BTZUN4U3ZrcnNqSWQ4M3BacyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9ob21lL2Nvb2tpbmcvbWVudSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjIzO30=',1752584679);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -575,61 +431,6 @@ LOCK TABLES `title_items` WRITE;
 INSERT INTO `title_items` VALUES (1,'Lunch Menu','Sunday-Friday 11:15am-3:00pm. Served with your choice of rice (Vegetable Fried RIce, Steamed Rice, Brown Rice), AND EITHER soup (Hot & Sour, Wonton, Vegetable, Egg Drop, Chicken Corn Soup) OR veggie egg roll.','L'),(2,'Soup Menu','','A'),(3,'Appetizers Menu','','B'),(4,'Chef\'s Recommendations Menu','','SP'),(5,'Chicken Menu','','C'),(6,'Beef Menu','','F'),(7,'Veal Menu','','V'),(8,'Duck Menu','','DK'),(9,'Vegetables Menu','','VG'),(10,'Curry Menu','','CU'),(11,'Noodles (Lo Mein) Menu','','NL'),(12,'Mei Fan (Very Fine Noodles) Menu','','NF'),(13,'Pan Fried Noodles Menu','','PF'),(14,'Fried Rice Menu','','FR'),(15,'Chow Mein Menu','','CM'),(16,'Egg Foo Young Menu','','FY'),(17,'Side Orders Menu','','SO'),(18,'Desserts Menu','','DS'),(19,'Dinner Combo Menu','Served with your choice of rice (Vegetable Fried RIce, Steamed Rice, Brown Rice), AND EITHER soup (Hot & Sour, Wonton, Vegetable, Egg Drop, Chicken Corn Soup) OR veggie egg roll.','D'),(20,'Sushi Menu Menu','Contains raw ingredients. Consuming raw or undercooked meat, poultry, or seafood may increase your risk of food borne illness.','SR');
 /*!40000 ALTER TABLE `title_items` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `visibilidad_noticias`
---
-
-DROP TABLE IF EXISTS `visibilidad_noticias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `visibilidad_noticias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `visibilidad` varchar(150) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `visibilidad` (`visibilidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `visibilidad_noticias`
---
-
-LOCK TABLES `visibilidad_noticias` WRITE;
-/*!40000 ALTER TABLE `visibilidad_noticias` DISABLE KEYS */;
-INSERT INTO `visibilidad_noticias` VALUES (6,'gerentes'),(1,'publico'),(5,'publico_profesores'),(3,'publico_registrado');
-/*!40000 ALTER TABLE `visibilidad_noticias` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -640,4 +441,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-14 16:23:01
+-- Dump completed on 2025-07-15 10:13:56

@@ -1,5 +1,7 @@
 *
 !private/
 !public/
+!public/public/
+!public/public/menu/
 !public/public/menu/**
 !.gitignore
