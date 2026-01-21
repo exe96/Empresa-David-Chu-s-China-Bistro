@@ -2,11 +2,7 @@
 
 ## Que hace el proyecto
 Es un Catálogo (Menú)  el cual se pueden agregar, eliminar y actualizar, categorías e ítems. Tienes un usuario de prueba el que te permite realizar estas acciones. Solo necesitas ir a admin en la parte inferior de la página y hacer el login
-## Demo
--Ingrese a esta url para probar el proyecto:
-``` 
-https://eadweb.tech/home/cooking
-```
+
 ## Proceso de instalación y configuración
 Algunos pasos pueden variar dependiendo del sistema operativo que usted utilice. Este ejemplo se está realizando en Windows 10. En Mac o Linux, los pasos podrían diferir.
 ### Versiones, con las que trabajo:
